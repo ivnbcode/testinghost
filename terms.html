@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .dialog-box {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 80%;
+            max-width: 500px;
+        }
+        h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .terms-content {
+            height: 200px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            color: #444;
+        }
+        .captcha-container {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        button {
+            display: inline-block;
+            background-color: #5a00ad;
+            color: #ffffff;
+            padding: 12px 12px;
+            text-decoration: none;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 20px;
+        }
+        button svg {
+            margin-right: 5px;
+        }
+        #back-btn {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        #back-btn:hover {
+            background-color: #555;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        #accept-btn {
+            background-color: #333;
+            color: rgb(255, 254, 254);
+        }
+        #accept-btn:hover {
+            background-color: #555;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        #accept-btn:disabled {
+            background-color: #999;
+            cursor: not-allowed;
+        }
+        input[type="number"] {
+            width: 60px;
+            padding: 5px;
+            border: 3px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="dialog-box">
+        <h2>Términos y Condiciones</h2>
+        <div id="terms-content" class="terms-content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc id aliquam tincidunt, nisl nunc tincidunt nunc, vitae aliquam nunc nunc vitae nunc. Sed euismod, nunc id aliquam tincidunt, nisl nunc tincidunt nunc, vitae aliquam nunc nunc vitae nunc.</p>
+            <p>Nullam auctor, nunc id aliquam tincidunt, nisl nunc tincidunt nunc, vitae aliquam nunc nunc vitae nunc. Sed euismod, nunc id aliquam tincidunt, nisl nunc tincidunt nunc, vitae aliquam nunc nunc vitae nunc.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc id aliquam tincidunt, nisl nunc tincidunt nunc, vitae aliquam nunc nunc vitae nunc. Sed euismod, nunc id aliquam tincidunt, nisl nunc tincidunt nunc, vitae aliquam nunc nunc vitae nunc.</p>
+            <p>Último párrafo. Cuando hayas llegado aquí, podrás aceptar los términos.</p>
+        </div>
+        <div class="captcha-container">
+            <label for="captcha-input">Confirma que eres humano:</label>
+            <span id="captcha-question"></span>
+            <input type="number" id="captcha-input" required>
+        </div>
+        <div class="button-container">
+            <button id="back-btn">Volver</button>
+            <button id="accept-btn" disabled>Aceptar y Continuar</button>
+        </div>
+    </div>
+
+    <script>
+        const termsContent = document.getElementById('terms-content');
+        const acceptBtn = document.getElementById('accept-btn');
+        const backBtn = document.getElementById('back-btn');
+        const captchaQuestion = document.getElementById('captcha-question');
+        const captchaInput = document.getElementById('captcha-input');
+
+        let captchaAnswer;
+        let termsRead = false;
+
+        function generateCaptcha() {
+            const num1 = Math.floor(Math.random() * 10) + 1;
+            const num2 = Math.floor(Math.random() * 10) + 1;
+            captchaAnswer = num1 + num2;
+            captchaQuestion.textContent = `¿Cuánto es ${num1} + ${num2}?`;
+        }
+
+        function checkAcceptConditions() {
+            acceptBtn.disabled = !(termsRead && captchaInput.value == captchaAnswer);
+        }
+
+        termsContent.addEventListener('scroll', function() {
+            if (termsContent.scrollHeight - termsContent.scrollTop === termsContent.clientHeight) {
+                termsRead = true;
+                checkAcceptConditions();
+            }
+        });
+
+        captchaInput.addEventListener('input', checkAcceptConditions);
+
+        acceptBtn.addEventListener('click', function() {
+            window.location.href = 'form.html';
+        });
+
+        backBtn.addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+
+        generateCaptcha();
+        feather.replace();
+    </script>
+</body>
+</html>
