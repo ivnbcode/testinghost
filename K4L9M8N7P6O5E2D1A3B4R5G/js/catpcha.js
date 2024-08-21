@@ -32,7 +32,7 @@ acceptBtn.addEventListener('click', function() {
 });
 
 backBtn.addEventListener('click', function() {
-    window.location.href = './index.html';//colocar URL a pagina de inicio
+    window.location.href = 'https://ivnbcode.github.io/testinghost/';//colocar URL a pagina de inicio
 });
 
 generateCaptcha();
