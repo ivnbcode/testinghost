@@ -3,70 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solicitud de Certificados de Saldo</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
-    <link rel="stylesheet" href="css/main.css">
+    <title>Inverbello Crediya LTDA</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<body>
-    <div class="container">
-        <h1><i data-feather="file-text" class="icon"></i> Solicitud de Certificados de Saldo</h1>
-<!--aqui van las fechas-->        
-        <h2>Fechas Importantes</h2>
-        <div class="date-card">
-            <i data-feather="calendar" class="icon"></i>
-            <div><!--fecha de apertura-->
-                <h3>Apertura de la Plataforma</h3>
-                <p>12 de Octubre, 2024</p>
+<body class="bg-gray-50">
+    <nav class="bg-blue-600 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="text-white text-2xl font-bold">Inverbello Crediya</div>
+            <div class="hidden md:flex space-x-4">
+                <a href="#" class="text-white hover:text-blue-200">Inicio</a>
+                <a href="#" class="text-white hover:text-blue-200">Nosotros</a>
+                <a href="#" class="text-white hover:text-blue-200">Contacto</a>
             </div>
         </div>
-        <div class="date-card">
-            <i data-feather="clock" class="icon"></i>
-            <div><!--fecha de cierre-->
-                <h3>Cierre de la Plataforma</h3>
-                <p>15 Octubre, 2024</p>
-            </div>
-        </div>
-        <div class="date-card">
-            <i data-feather="file" class="icon"></i>
-            <div><!--fecha de entrega de documentos-->
-                <h3>Entrega de Documentos</h3>
-                <p>20 de Octubre, 2024</p>
-            </div>
-        </div>
-<!--informacion importante-->
-        <h2>Información Importante</h2>
-        <div class="alert-card">
-            <h3>⚠️</h3>
-            <h4>Los certificados solo serán entregados fisicamente en las oficinas al titular.</h4> 
-        </div>
-        <div class="alert-card">
-            <h3>⚠️</h3>
-            <h4>Los certificados NO serán entregados por correo electronico u otro medio diferente al indicado aneteriomente. </h4>
-        </div>
-        <div class="alert-card">
-            <h3>⚠️</h3>
-            <h4>Cada certificado tiene un costo de $35.000 no reembolsable.</h4>     
-        </div>
-<!--paso para realizar la solicitud-->
-        <h2>Proceso de Solicitud</h2>
-        <ol class="process-list">
-            <li><i data-feather="dollar-sign" class="icon"></i> Pagar el costo del certificado en las oficinas.</li>
-            <li><i data-feather="mouse-pointer" class="icon"></i> Haga clic en el botón "Solicitar Certificado" al final de esta página.</li>
-            <li><i data-feather="edit" class="icon"></i> Complete el formulario con la información requerida.</li>
-            <li><i data-feather="check-circle" class="icon"></i> Revise y confirme los detalles de su solicitud.</li>
-            <li><i data-feather="send" class="icon"></i> Envíe la solicitud y guarde su radicado.</li>
-            <li><i data-feather="file-text" class="icon"></i> Retire el certificado solitado directamente en las oficinas.</li>
-        </ol>
-        
-        <a href="K4L9M8N7P6O5E2D1A3B4R5G/J8I6H7F5C2R9T8U7Y6N5M4O3L2.html" class="btn"><i data-feather="file-plus" class="icon"></i> Solicitar Certificado</a>
-    </div>
-    
-    <footer>
-        <p>© 2024 Servicio de Certificados de Saldo. Todos los derechos reservados.</p>
-    </footer>
+    </nav>
 
-    <script>
-        feather.replace({ color: '#666', stroke: '#666' })
-    </script>
+    <header class="bg-blue-700 text-white py-20">
+        <div class="container mx-auto text-center px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">Soluciones Financieras a tu Alcance</h1>
+            <p class="text-xl md:text-2xl text-blue-100">Tu mejor aliado en créditos y financiamiento</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-16 px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Simulador de Crédito -->
+            <a href="/simulador" class="transform hover:scale-105 transition-transform duration-300">
+                <div class="bg-white rounded-lg shadow-lg p-8 text-center h-full">
+                    <div class="text-blue-600 text-5xl mb-4">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Simulador de Crédito</h2>
+                    <p class="text-gray-600">Calcula las cuotas y plazos de tu crédito de manera fácil y rápida</p>
+                </div>
+            </a>
+
+            <!-- Calcular Cupo -->
+            <a href="/cupo" class="transform hover:scale-105 transition-transform duration-300">
+                <div class="bg-white rounded-lg shadow-lg p-8 text-center h-full">
+                    <div class="text-blue-600 text-5xl mb-4">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Calcular Cupo</h2>
+                    <p class="text-gray-600">Descubre el monto máximo al que puedes acceder según tu perfil</p>
+                </div>
+            </a>
+
+            <!-- Estudio de Crédito -->
+            <a href="/estudio" class="transform hover:scale-105 transition-transform duration-300">
+                <div class="bg-white rounded-lg shadow-lg p-8 text-center h-full">
+                    <div class="text-blue-600 text-5xl mb-4">
+                        <i class="fas fa-file-signature"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Estudio de Crédito</h2>
+                    <p class="text-gray-600">Inicia tu proceso de aprobación con un estudio personalizado</p>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Inverbello Crediya LTDA. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 </body>
 </html>
